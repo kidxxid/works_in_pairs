@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    for (int i = 0; i < 5; i++)
+    for ( course = 0; course < 5; course++)
     {
         List();
     }
