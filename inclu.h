@@ -17,7 +17,6 @@ S as[90];			   //经常缺席学生数组
 int con = 0;		   // 5-8人迟到，给五次
 int course = 0;		   //上课种类科目1科目2
 
-
 void Init();
 double calculateE();
 void Deal();

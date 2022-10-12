@@ -1,5 +1,5 @@
 #include "inclu.h"
-#include "data.h"
+
 void List()
 { //表单
     int temp[11] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}, t, t1, j, bd = 0, k;
@@ -62,20 +62,20 @@ void List()
     }
     FILE *fp;
     if (course == 0)
-        fp = fopen("c:\\科目1.txt", "w"); //打开文件以便写入数据
+        fp = fopen("科目1.txt", "w"); //打开文件以便写入数据
     if (course == 1)
-        fp = fopen("c:\\科目2.txt", "w"); //打开文件以便写入数据
+        fp = fopen("科目2.txt", "w"); //打开文件以便写入数据
     if (course == 2)
-        fp = fopen("c:\\科目3.txt", "w"); //打开文件以便写入数据
+        fp = fopen("科目3.txt", "w"); //打开文件以便写入数据
     if (course == 3)
-        fp = fopen("c:\\科目4.txt", "w"); //打开文件以便写入数据
+        fp = fopen("科目4.txt", "w"); //打开文件以便写入数据
     if (course == 4)
-        fp = fopen("c:\\科目5.txt", "w"); //打开文件以便写入数据
+        fp = fopen("科目5.txt", "w"); //打开文件以便写入数据
     for (int i = 0; i < 90; i++)
     {
         for (j = 0; j < 20; j++)
         {
-            //将a数组中的整数写入fp指向的c:\a.txt文件
+            //将a数组中的整数写入fp指向的a.txt文件
             if (j == 0)
             {
                 fprintf(fp, "学生_%2d 绩点_%.2f ", i, s[i].credit);
@@ -91,13 +91,19 @@ void List()
 //初始化
 void Init()
 {
+    int j;
     for (int i = 0; i < 90; i++)
     {
         s[i].count = 0;
         s[i].flag = 0;
-        for (int j = 0; j < 20; j++)
+        for (j = 0; j < 20; j++)
         {
             s[i].a[j] = 1;
+        }
+        for (int i = 0; i < 90; i++)
+        {
+            j = rand() % 30;
+            s[i].credit = 0.1 * j + 1; //����
         }
     }
 }
